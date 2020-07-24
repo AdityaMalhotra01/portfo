@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="section-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <img src="./static/img/x-ray-pnemonia2.png" class="img-responsive" alt="">
+        <div class="card-container">
+          <div class="text-center">
+            <h1 class="h2">Deep Learning model to detect pneumonia from X-ray Images using Pytorch</h1>
+          </div>
+            <small class="pull-right"></small>
+          </blockquote>
+        </div>
+      </div>
+
+      
+      
+      <div class="col-md-8 col-md-offset-2 section-container-spacer">
+        <div class="row">
+          <div class="col-xs-12">
+            <img src="./static/img/x-ray-pnemonia3.png" class="img-responsive" alt="">
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <p>TThe WHO estimates that over 4 million premature deaths occur annually from household air pollution-related diseases including pneumonia. Over 150 million people get infected with pneumonia on an annual basis especially children under 5 years old. In such regions, the problem can be further aggravated due to the dearth of medical resources and personnel. For example, in Africa’s 57 nations, a gap of 2.3 million doctors and nurses exists.
+        </p>
+        <p>Build an algorithm to automatically identify whether a patient is suffering from pneumonia or not by looking at chest X-ray images.</p>
+        <p>First we add dataset in kaggle with the add button “+ Add data”at the right top corner</p>
+        <p>Search dataset with name “Chest X-Ray Images (Pneumonia)” and add it.</p>
+        <p class="bg-col-formula"><br>
+          import os<br>
+          from PIL import Image<br>
+          import torch<br>
+          import torchvision<br>
+          import numpy as np<br>
+          import matplotlib.pyplot as plt<br>
+          import torch.nn as nn<br>
+          import torch.nn.functional as F<br>
+          import torchvision.datasets as datasets<br>
+          from torchvision.transforms import transforms<br>
+          from torchvision.utils import make_grid<br>
+          from torch.utils.data.dataloader import DataLoader<br>
+          from torch.utils.data import random_split<br>
+          from torchvision.datasets.utils import download_url<br>
+          import requests<br>
+          from torch.autograd import Variable<br>
+          %matplotlib inline<br>
+          <br>
+        </p>
+        <p>Import the libraries as above</p>
+        <p class="bg-col-formula"><br>
+          project_name = '05-detect-pneumonia'<br>
+          transformations = transforms.Compose([<br>
+              transforms.Resize(100),<br>
+              transforms.CenterCrop(100),<br>
+              transforms.ToTensor(),<br>
+              transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])<br>
+              ])<br>
+          dataset = datasets.ImageFolder('/kaggle/input/chest-xray-pneumonia/chest_xray/chest_xray/train',transform <br>= transformations)<br>
+          test_dataset = datasets.ImageFolder('/kaggle/input/chest-xray-pneumonia/chest_xray/chest_xray/test',<br>transform = transformations)<br>
+          val_dataset = datasets.ImageFolder('/kaggle/input/chest-xray-pneumonia/chest_xray/chest_xray/val',<br>transform = transformations)<br><br>
+        </p>
+        <p>This code import the images and apply various data augmentation techniques.</p>
+        <p class="bg-col-formula"><br>
+          dataset_size = len(dataset)<br>
+          dataset_size<br>
+          <br>
+          out[]:5216<br><br>
+        </p>
+        <p>length of the dataset</p>
+        <p class="bg-col-formula">test_dataset_size = len(test_dataset)<br>
+          test_dataset_size<br>
+          <br>
+          out[]:624<br></p>
+          <p>length of test set</p>
+
+        <p class="bg-col-formula">classes = dataset.classes<br>
+          classes<br>
+          <br>
+          out[]:['NORMAL', 'PNEUMONIA']</p>
+          
+        <p>So, there are 2 classes</p>
+
+        <p class="bg-col-formula">train_loader = DeviceDataLoader(train_loader, device)<br>
+          val_loader = DeviceDataLoader(val_loader, device)<br>
+          test_loader = DeviceDataLoader(test_loader, device)<br></p>
+
+        <p>then we load the data in device data loader</p>
+
+        <p class="bg-col-formula">history += fit(20, 0.1, model, train_loader, val_loader)</p>
+
+        <p>I trained the data for 20 epochs with the learning rate of 0.1 and with this i got 87.5% accuracy on the validation set. I tried multiple models but i found this model architecture the best.</p>
+
+        <p>for the full code visit my account on <a href="https://jovian.ml/adityamalhotra6/05-detect-pneumonia" target="_blank">Jovian.ml</a>. Jovian.ml is a platform for sharing and collaboraring on Jupyter notebooks and data science projects. jovian-py is an open-source Python package for uploading your data science code, Jupyter notebooks, ML models, hyperparameters, metrics etc</p>
+      
+          
+
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="section-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <img src="./static/img/work02-hover.png" class="img-responsive" alt="">
+        <div class="card-container">
+          <div class="text-center">
+            <h1 class="h2">Intro to Deep Learning with PyTorch</h1>
+          </div>
+            <small class="pull-right"></small>
+          </blockquote>
+        </div>
+      </div>
+
+      
+      
+      <div class="col-md-8 col-md-offset-2 section-container-spacer">
+        <div class="row">
+            <img src="./static/img/pytorch-intro1.jpg" class="img-responsive" alt="">
+          </div>
+
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <p>PyTorch is an open source machine learning library based on the Torch library, used for applications such as computer vision and natural language processing, primarily developed by Facebook's AI Research lab (FAIR).</p>
+        <p> It is free and open-source software released under the Modified BSD license. Although the Python interface is more polished and the primary focus of development, PyTorch also has a C++ interface.</p>
+        <p>A number of pieces of Deep Learning software are built on top of PyTorch, including Tesla Autopilot, Uber's Pyro,HuggingFace's Transformers,PyTorch Lightning, and Catalyst.</p>
+        <h3>PyTorch provides two high-level features:</h3>
+        <ul>
+          <li>Tensor computing (like NumPy) with strong acceleration via graphics processing units (GPU)
+            </li>
+            <li>Deep neural networks built on a tape-based automatic differentiation system</li>
+        </ul>
+        <div class="col-xs-12 col-md-6">
+          <img src="./static/img/pytorch-intro2.jpg" class="img-responsive" alt="">
+        </div>
+        <h3>History</h3>
+        <p>Facebook operates both PyTorch and Convolutional Architecture for Fast Feature Embedding (Caffe2), but models defined by the two frameworks were mutually incompatible. The Open Neural Network Exchange (ONNX) project was created by Facebook and Microsoft in September 2017 for converting models between frameworks. Caffe2 was merged into PyTorch at the end of March 2018.</p>
+        <h3>PyTorch tensors</h3>
+        <p>PyTorch defines a class called Tensor (torch.Tensor) to store and operate on homogeneous multidimensional rectangular arrays of numbers. PyTorch Tensors are similar to NumPy Arrays, but can also be operated on a CUDA-capable Nvidia GPU. PyTorch supports various sub-types of Tensors.</p>
+        <h3>Modules</h3>
+        <h5>Autograd module</h5>
+        <p>PyTorch uses a method called automatic differentiation. A recorder records what operations have performed, and then it replays it backward to compute the gradients. This method is especially powerful when building neural networks to save time on one epoch by calculating differentiation of the parameters at the forward pass.</p>
+        <h5>Optim module</h5>
+        <p>torch.optim is a module that implements various optimization algorithms used for building neural networks. Most of the commonly used methods are already supported, so there is no need to build them from scratch.</p>
+        <h5>nn.module</h5>
+        <p>PyTorch autograd makes it easy to define computational graphs and take gradients, but raw autograd can be a bit too low-level for defining complex neural networks. This is where the nn module can help.</p>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
