@@ -32,5 +32,3 @@ def sent_mail():
 		return redirect('thankyou.html')
 	else:
 		return 'Somthing went wrong'
-
-app.run()

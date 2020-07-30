@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="section-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <img src="./static/img/ava2.png" class="img-responsive" alt="">
+        <div class="card-container">
+          <div class="text-center">
+            <h1 class="h2">Ava:Artificial intelligence</h1>
+          </div>
+            <small class="pull-right"></small>
+          </blockquote>
+        </div>
+      </div>
+
+      
+      
+      <div class="col-xs-10">
+        <div class="centering-text">
+        <p>Artificial intelligence (AI), sometimes called machine intelligence, is intelligence demonstrated by machines, unlike the natural intelligence displayed by humans and animals. Leading AI textbooks define the field as the study of "intelligent agents": any device that perceives its environment and takes actions that maximize its chance of successfully achieving its goals.</p>
+
+        <img src="./static/img/ava3.jpg" class="img-responsive" alt="">
+        <br>
+        <p>As machines become increasingly capable, tasks considered to require "intelligence" are often removed from the definition of AI, a phenomenon known as the AI effect. A quip in Tesler's Theorem says "AI is whatever hasn't been done yet." For instance, optical character recognition is frequently excluded from things considered to be AI, having become a routine technology. Modern machine capabilities generally classified as AI include successfully understanding human speech, competing at the highest level in strategic game systems (such as chess and Go), autonomously operating cars, intelligent routing in content delivery networks, and military simulations</p>
+        <p>I have been working on Deep learning and NLP (Natural language processing) for quite a while now. According to what i learn, I tried to build the Al that can not only talk like a person but do some limited tasks too if said. I named it Ava. I used python and some of its great libraries to build it.</p>
+        <p>It can do some specific tasks like play music, tell the current time, search something on internet and it even do data scraping to answer some queries as we ask. To tarin it I used “cornell movie dialog corpus” which I find appropriate. </p>
+        <p>Humans are on earth for hundreds of thousands of years. We have evolved so much since. How our mind evolves since then. The human brain is primarily composed of neurons, glial cells, neural stem cells a blood vessel. Humans mind have 86 billion of neurons. Neurons are information messengers. They use electrical impulses and chemical signals to transmit information between different areas of brain, and between the brain and the rest of the nervous system. How information passes through the neural network in the brain is still a mystery though. In AI what we try to do is to try to mimic the human mind.</p>
+        <img src="./static/img/ava4.jpg" class="img-responsive" alt="" width="1000px">
+        <br>
+        <p>Ava’s neuron structure is built on RNN (Recurrent neural network). Now if you don’t know what is the RNN you can simply think of it as the time series. After training of the AI on this data for few time(epochs) it tries to figure out the most likely word which may occur next (tries to figure out some pattern). Yes, if you are thinking how can it know which word will occur next. What it takes to make sense out of word and sentences. But in this case, there is problem how can AI know words isn’t computer built on binary structure. The answer is yes its built on binary structure so what we will do convert the word into the integers and so that AI to make sense out of it and on top of it we use something called words embeddings this will help the structure to built the multiple dimensions and figure out the connection between the words. For example: - king and Man is related and Queen and Woman is related somehow. See following diagram for the reference</p>
+        <img src="./static/img/ava5.png" class="img-responsive" alt="">
+        <br>
+
+      </div>
+    </div>
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}
