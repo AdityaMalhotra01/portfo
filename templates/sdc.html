@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="section-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <img src="./static/img/self-driving-car/car2.png" class="img-responsive" alt="">
+        <div class="card-container">
+          <div class="text-center">
+            <h1 class="h2">Self-driving car using deep learning</h1>
+          </div>
+          <small class="pull-right"></small>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="centering-image">
+        <img src="./static/img/self-driving-car/self-driving-car-2300x1000.png" class="img-responsive" alt="">
+      </div>
+
+      <div class="col-md-8 col-md-offset-2 section-container-spacer">
+
+      </div>
+    </div>
+    <div class="centering-text">
+      <p>
+        Self-driving cars have rapidly become one of the most transformative technologies to emerge. Fuelled by Deep
+        Learning algorithms, they are continuously driving our society forward and creating new opportunities in the
+        mobility sector.</p>
+      <p>An autonomous car is a vehicle capable of sensing its environment and operating without human involvement. A
+        human passenger is not required to take control of the vehicle at any time, nor is a human passenger required to
+        be present in the vehicle at all. An autonomous car can go anywhere a traditional car goes and do everything
+        that an experienced human driver does.</p>
+      <p>Autonomous cars rely on sensors, actuators, complex algorithms, machine learning systems, and powerful
+        processors to execute software.Autonomous cars create and maintain a map of their surroundings based on a
+        variety of sensors situated in different parts of the vehicle. Radar sensors monitor the position of nearby
+        vehicles. Video cameras detect traffic lights, read road signs, track other vehicles, and look for pedestrians.
+        Lidar (light detection and ranging) sensors bounce pulses of light off the car’s surroundings to measure
+        distances, detect road edges, and identify lane markings. Ultrasonic sensors in the wheels detect curbs and
+        other vehicles when parking. Sophisticated software then processes all this sensory input, plots a path, and
+        sends instructions to the car’s actuators, which control acceleration, braking, and steering. Hard-coded rules,
+        obstacle avoidance algorithms, predictive modeling, and object recognition help the software follow traffic
+        rules and navigate obstacles.</p>
+      <br>
+      <div class='centering-image'>
+        <img src="./static/img/self-driving-car/1.png" alt="">
+      </div>
+      <br><br>
+      <p>Udacity have built its self-driving car simulator which we can use to built our own deep learning model. We can
+        manually drive a car to generate training data, or our deep learning model can autonomously drive for testing.
+      </p>
+      <p>
+        To build the model we will import some important libraries
+      </p>      
+      <p class='bg-col-formula'>
+        import os<br>
+        import numpy as np<br>
+        import matplotlib.pyplot as plt<br>
+        import matplotlib.image as mpimg<br>
+        import keras<br>
+        from keras.models import Sequential<br>
+        from keras.optimizers import Adam<br>
+        from keras.layers import Conv2D, MaxPooling2D, Dropout, Flatten, Dense<br>
+        from sklearn.utils import shuffle<br>
+        from sklearn.model_selection import train_test_split<br>
+        from imgaug import augmenters as iaa<br>
+        import cv2<br>
+        import pandas as pd<br>
+        import ntpath<br>
+        import random<br>
+      </p>
+
+      <p>After analysing the data, we find that we have more data of steering angle 0 which means if we train our model on this data model may become bias towards the steering angle 0. So, to resolve this issue me must set the threshold.</p>
+
+      <div>
+        <img src="./static/img/self-driving-car/graph1.png" alt="">
+        <img src="./static/img/self-driving-car/graph2.png" alt="">
+      </div>
+      <br>
+      <p>In next step we will split the data into traning and test sets.</p><br>
+      <div>
+        <img src="./static/img/self-driving-car/graph3.png" alt="">
+      </div>
+      <p>We have to make sure that our model should not to be bias to the data we have. So to avoid this we have to add some randomness in our data. to do this we have many ways, but in this case we will randomly apply i.e. zooming, pannig, filping , random brightness etc to our data images.</p>
+
+      <div>
+        <img src="./static/img/self-driving-car/graph4-900x300.png" alt="">
+        <img src="./static/img/self-driving-car/graph5-900x300.png" alt="">
+      </div>
+        <br>
+        <p>This is how our network will look like.</p>
+      <p class='bg-col-formula'>Model: "sequential_1"<br>
+        Layer (type)                 Output Shape              Param #   <br>
+        conv2d_1 (Conv2D)            (None, 31, 98, 24)        1824      <br>
+        conv2d_2 (Conv2D)            (None, 14, 47, 36)        21636     <br>
+        conv2d_3 (Conv2D)            (None, 5, 22, 48)         43248     <br>
+        conv2d_4 (Conv2D)            (None, 3, 20, 64)         27712     <br>
+        conv2d_5 (Conv2D)            (None, 1, 18, 64)         36928     <br>
+        dropout_1 (Dropout)          (None, 1, 18, 64)         0         <br>
+        flatten_1 (Flatten)          (None, 1152)              0         <br>
+        dense_1 (Dense)              (None, 100)               115300    <br>
+        dropout_2 (Dropout)          (None, 100)               0         <br>
+        dense_2 (Dense)              (None, 50)                5050      <br>
+        dropout_3 (Dropout)          (None, 50)                0         <br>
+        dense_3 (Dense)              (None, 10)                510       <br>
+        dropout_4 (Dropout)          (None, 10)                0         <br>
+        dense_4 (Dense)              (None, 1)                 11        <br>
+        Total params: 252,219<br>
+        Trainable params: 252,219<br>
+        Non-trainable params: 0<br>
+        _________________________________________________________________</p>
+
+        <p>After training for 100 epochs, the loss becomes too low because this is not a classification problem so we will only focus towards loss.</p>
+        <p>You can find code <a href="https://jovian.ml/adityamalhotra6/self-driving-car-from-udacity-simulator" target="_blank">here</a>.</p>
+
+        <div class='centering-image'>
+          <img src="./static/img/self-driving-car/graph6.png" alt="">
+        </div>
+
+      <br><br>
+      <iframe class='centering-image' width="1000" height="315" src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FmZOc-zrbnR8%3Ffeature%3Doembed&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DmZOc-zrbnR8&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FmZOc-zrbnR8%2Fhqdefault.jpg&key=d04bfffea46d4aeda930ec88cc64b87c&type=text%2Fhtml&schema=youtube">
+      </iframe>
+
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+{% endblock %}
