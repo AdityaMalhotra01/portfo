@@ -15,8 +15,8 @@
         </div>
       </div>
 
-      <div class="centering-image">
-        <img src="./static/img/self-driving-car/self-driving-car-2300x1000.png" class="img-responsive" alt="">
+      <div class="text-center">
+        <img src="./static/img/self-driving-car/self-driving-car.jpg" width="470" height="280" alt="">
       </div>
 
       <div class="col-md-8 col-md-offset-2 section-container-spacer">
@@ -43,8 +43,9 @@
         obstacle avoidance algorithms, predictive modeling, and object recognition help the software follow traffic
         rules and navigate obstacles.</p>
       <br>
-      <div class='centering-image'>
-        <img src="./static/img/self-driving-car/1.png" alt="">
+
+      <div class="text-center">
+        <img src="./static/img/self-driving-car/1.png" width="390" height="290"  alt="...">
       </div>
       <br><br>
       <p>Udacity have built its self-driving car simulator which we can use to built our own deep learning model. We can
@@ -73,20 +74,28 @@
 
       <p>After analysing the data, we find that we have more data of steering angle 0 which means if we train our model on this data model may become bias towards the steering angle 0. So, to resolve this issue me must set the threshold.</p>
 
-      <div>
-        <img src="./static/img/self-driving-car/graph1.png" alt="">
-        <img src="./static/img/self-driving-car/graph2.png" alt="">
+
+      <div class="text-center">
+        <img src="./static/img/self-driving-car/graph1.png" width="390" height="290"  alt="...">
+        <img src="./static/img/self-driving-car/graph2.png" width="390" height="290" alt="">
       </div>
       <br>
       <p>In next step we will split the data into traning and test sets.</p><br>
-      <div>
-        <img src="./static/img/self-driving-car/graph3.png" alt="">
+      <div class="text-center">
+        <img src="./static/img/self-driving-car/graph3-1.png" width="390" height="290"  alt="...">
+        <img src="./static/img/self-driving-car/graph3-2.png" width="390" height="290" alt="">
       </div>
+      <br>
       <p>We have to make sure that our model should not to be bias to the data we have. So to avoid this we have to add some randomness in our data. to do this we have many ways, but in this case we will randomly apply i.e. zooming, pannig, filping , random brightness etc to our data images.</p>
 
-      <div>
-        <img src="./static/img/self-driving-car/graph4-900x300.png" alt="">
-        <img src="./static/img/self-driving-car/graph5-900x300.png" alt="">
+      <div class="text-center">
+        <img src="./static/img/self-driving-car/graph4-1.png" width="390" height="290"  alt="...">
+        <img src="./static/img/self-driving-car/graph4-2.png" width="390" height="290" alt="">
+      </div>
+<br>
+      <div class="text-center">
+        <img src="./static/img/self-driving-car/graph5-1.png" width="390" height="290"  alt="...">
+        <img src="./static/img/self-driving-car/graph5-2.png" width="390" height="290" alt="">
       </div>
         <br>
         <p>This is how our network will look like.</p>
@@ -108,19 +117,24 @@
         dense_4 (Dense)              (None, 1)                 11        <br>
         Total params: 252,219<br>
         Trainable params: 252,219<br>
-        Non-trainable params: 0<br>
-        _________________________________________________________________</p>
+        Non-trainable params: 0<br></p>
 
         <p>After training for 100 epochs, the loss becomes too low because this is not a classification problem so we will only focus towards loss.</p>
         <p>You can find code <a href="https://jovian.ml/adityamalhotra6/self-driving-car-from-udacity-simulator" target="_blank">here</a>.</p>
 
-        <div class='centering-image'>
-          <img src="./static/img/self-driving-car/graph6.png" alt="">
+        <div class='text-center'>
+          <img src="./static/img/self-driving-car/graph6.png" width="390" height="290" alt="">
         </div>
 
       <br><br>
-      <iframe class='centering-image' width="1000" height="315" src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FmZOc-zrbnR8%3Ffeature%3Doembed&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DmZOc-zrbnR8&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FmZOc-zrbnR8%2Fhqdefault.jpg&key=d04bfffea46d4aeda930ec88cc64b87c&type=text%2Fhtml&schema=youtube">
-      </iframe>
+
+      <div class='text-center' >
+        <iframe width="400" height="255" src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FmZOc-zrbnR8%3Ffeature%3Doembed&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DmZOc-zrbnR8&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FmZOc-zrbnR8%2Fhqdefault.jpg&key=d04bfffea46d4aeda930ec88cc64b87c&type=text%2Fhtml&schema=youtube">
+        </iframe></div>
+        <br>
+        <div class="text-center">
+          <p>Referances:<a href="https://medium.com/@naokishibuya/introduction-to-udacity-self-driving-car-simulator-4d78198d301d" target="_blank">Introduction to Udacity Self-Driving Car Simulator</a></p>
+        </div>
 
     </div>
   </div>
